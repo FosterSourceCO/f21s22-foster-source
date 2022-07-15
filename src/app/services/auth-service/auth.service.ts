@@ -84,7 +84,7 @@ export class AuthService {
   }
 
   logout(): void {
-    this.cookieService.delete('access-token');
+    this.cookieService.delete('access-token', '/', '.fostersource.org');
     this.emitLoggedOut();
   }
 
