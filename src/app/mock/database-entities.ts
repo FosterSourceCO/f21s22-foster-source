@@ -111,8 +111,8 @@ export const createAccountRequests: CreateAccountRequest[] = [
 
 export const cookies: Token[] = [
   {
-    id: 1,
-    privilegeLevel: 3,
+    user: { id: 1 },
+    application: { userPermissions: [3] },
     exp: 12341235,
     iat: 123412341,
   },

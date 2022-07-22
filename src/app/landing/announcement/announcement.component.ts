@@ -27,7 +27,7 @@ export class AnnouncementComponent implements OnInit {
     const cookie = this.authService.getToken();
 
     if (cookie) {
-      this.canEdit = cookie.privilegeLevel >= Privilege.MOD;
+      this.canEdit = cookie.application.userPermissions[0] >= Privilege.MOD;
     }
   }
 

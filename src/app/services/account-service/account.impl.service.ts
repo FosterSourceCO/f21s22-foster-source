@@ -59,7 +59,7 @@ export class AccountImplService implements AccountService {
   login(params: LoginRequest): Observable<string> {
     params.username = params.username.toLowerCase();
     return this.http
-      .post<HttpResponse<any>>(`${environment.loginHost}/api/session/login`, params, {
+      .post<HttpResponse<any>>(`${environment.backendHost}/api/session/login`, params, {
         withCredentials: true,
         observe: 'response',
       })
@@ -109,12 +109,12 @@ export class AccountImplService implements AccountService {
 
   getCurrentAccount(): Observable<Account> {
     const cookie = this.authService.getToken();
-
+    console.log(cookie);
     if (!cookie) {
       return throwError('There is no user currently logged in.');
     }
-
-    return this.getAccountById(cookie.id);
+    console.log(cookie.user.id);
+    return this.getAccountById(cookie.user.id);
   }
 
   completeProfile(params: FinishProfileReq): Observable<any> {

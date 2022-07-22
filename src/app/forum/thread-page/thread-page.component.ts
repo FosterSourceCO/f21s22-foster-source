@@ -97,7 +97,7 @@ export class ThreadPageComponent implements OnInit {
 
               this.generateProfileImageSrc();
 
-              this.isOwnThread = this.authService.getToken()?.id === this.thread.account.id;
+              this.isOwnThread = this.authService.getToken()?.user.id === this.thread.account.id;
               this.userHasLiked = this.thread.requesterHasLiked;
               this.replyReq = {
                 threadId: ft.id,

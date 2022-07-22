@@ -70,8 +70,8 @@ export interface LoginRequest {
 }
 
 export interface Token {
-  id: number;
-  privilegeLevel: number;
+  user: { id: number };
+  application: { userPermissions: number[] };
   exp: number;
   iat: number;
 }

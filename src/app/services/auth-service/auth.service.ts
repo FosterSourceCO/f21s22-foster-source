@@ -31,7 +31,7 @@ export class AuthService {
     console.log(token);
     if (token) {
       this.expiresAt = moment().add(token.exp, 'second');
-      this.privilegeLevel = token.privilegeLevel;
+      this.privilegeLevel = token.application.userPermissions[0];
       this.emitLoggedIn();
     } else {
       this.privilegeLevel = Privilege.NONE;
@@ -84,7 +84,8 @@ export class AuthService {
   }
 
   logout(): void {
-    this.cookieService.delete('access-token', '/', '.fostersource.org');
+    this.cookieService.delete('access-token', '/', 'fostersource.enoble.cloud');
+    //this.cookieService.delete('access-token');
     this.emitLoggedOut();
   }
 

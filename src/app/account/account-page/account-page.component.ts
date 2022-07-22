@@ -29,7 +29,7 @@ export class AccountPageComponent implements OnInit {
     this.accountService.getCurrentAccount().subscribe(
       (acc: Account) => {
         this.currentAccount = acc;
-        this.isUser = this.authService.getToken()?.privilegeLevel === 1;
+        this.isUser = this.authService.getToken()?.application.userPermissions[0] === 1;
 
         if (this.isUser) {
           this.certExpired = this.isCertExpired(this.currentAccount.certExpiry);

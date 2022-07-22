@@ -31,7 +31,7 @@ export class EditThreadComponent implements OnInit {
 
       this.forumService.getThreadById(parseInt(id)).subscribe(
         (ts) => {
-          if (this.authService.getToken()?.id !== ts.account.id) {
+          if (this.authService.getToken()?.user.id !== ts.account.id) {
             this.toastService.error('Access denied. You can only edit your own threads.');
           } else {
             this.thread = ts;

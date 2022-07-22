@@ -57,7 +57,7 @@ export class ThreadReplyComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.reply) {
-      this.isOwnReply = this.authService.getToken()?.id === this.reply.account.id;
+      this.isOwnReply = this.authService.getToken()?.user.id === this.reply.account.id;
       this.userHasLiked = this.reply.requesterHasLiked;
       this.isMod = this.authService.isAtLeastMod();
       this.generateProfileImageSrc();
