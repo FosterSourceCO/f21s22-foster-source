@@ -27,9 +27,9 @@
     </div>
     <div *ngIf="isUser" id="cw-info-div" class="col-sm-12 col-md-6 mt-5 mt-md-0">
       <h3>Case Worker Information</h3>
-      <p><b>Case Worker Name:</b> {{ cookie.nc_Caseworker_Name_c }}</p>
-      <p><b>Case Worker Contact Info:</b> {{ cookie.nc_Caseworker_Contact_Info_c }}</p>
-      <p><b>County or Agency Certified By:</b> {{ cookie.nc_Caseworker_Cerifying_County_Agency_c }}</p>
+      <p><b>Case Worker Name:</b> {{ cookie.nc_Caseworkers_Name__c }}</p>
+      <p><b>Case Worker Contact Info:</b> {{ cookie.nc_Caseworker_Contact_Info__c }}</p>
+      <p><b>County or Agency Certified By:</b> {{ cookie.nc_Certifying_County_Agency__c }}</p>
       <p>
         <b>Expiration Date of Certification:</b> {{ getFormattedCertExpiryDate() }}
         <span class="expires-soon bg-danger text-white rounded pb-1 px-2 ml-2" *ngIf="certExpiresSoon"

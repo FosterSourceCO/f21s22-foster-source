@@ -47,17 +47,27 @@ export interface Token {
   Email: string;
   FirstName: string;
   LastName: string;
+  // eslint-disable-next-line camelcase
   nc_Portal_Username__c: string;
   Id: string;
   MobilePhone: string;
+  // eslint-disable-next-line camelcase
   nc_Address__City_s: string;
+  // eslint-disable-next-line camelcase
   nc_Address__PostalCode__s: string;
+  // eslint-disable-next-line camelcase
   nc_Address__Street__s: string;
+  // eslint-disable-next-line camelcase
   nc_State__c: string;
-  nc_Caseworker_Name_c: string;
-  nc_Caseworker_Status_cs: string;
-  nc_Caseworker_Contact_Info_c: string;
-  nc_Caseworker_Cerifying_County_Agency_c: string;
+  // eslint-disable-next-line camelcase
+  nc_Caseworkers_Name__c: string;
+  // eslint-disable-next-line camelcase
+  nc_Caseworker_Status_s: string;
+  // eslint-disable-next-line camelcase
+  nc_Caseworker_Contact_Info__c: string;
+  // eslint-disable-next-line camelcase
+  nc_Certifying_County_Agency__c: string;
+  // eslint-disable-next-line camelcase
   nc_County_of_Residence_c: string;
   privilegeLevel: number;
   exp: number;

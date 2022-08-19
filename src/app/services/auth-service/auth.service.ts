@@ -104,8 +104,8 @@ export class AuthService {
   }
 
   logout(): void {
-    //this.cookieService.delete('sf-token', '/', '.fostersource.org');
-    this.cookieService.delete('sf-token');
+    this.cookieService.delete('sf-token', '/', '.fostersource.org');
+    //this.cookieService.delete('sf-token');
     this.emitLoggedOut();
   }
 
