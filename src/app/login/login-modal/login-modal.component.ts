@@ -42,14 +42,27 @@ export class LoginModalComponent implements OnInit {
         password: this.loginForm.get('password')!.value,
       };
       this.accountService.login(data).subscribe(
-        (res: string) => {
-          this.authService.init();
-          this.router.navigate(['/respite']);
+        (res: any) => {
+          this.authService.setCookieOnDomain(res);
+          const cookie = this.authService.getToken();
+          if (cookie) {
+            this.checkIfUserExists(cookie.Id);
+          }
         },
         (err) => {
           this.toastService.httpError(err);
         }
       );
     }
+  }
+  public checkIfUserExists(id: string): void {
+    this.accountService.getAccountById(id).subscribe(
+      (response) => {
+        this.router.navigate(['/respite']);
+      },
+      (err) => {
+        this.router.navigate(['/login/create-account']);
+      }
+    );
   }
 }

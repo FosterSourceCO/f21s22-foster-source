@@ -4,7 +4,7 @@ import { SmallProfile } from './small-profile.model';
 import { PhoneNumber } from './phonenumber.model';
 
 export interface Profile {
-  id: number;
+  id: string;
   biography: string;
   profileLargeAWSKey: string;
   profileSmallAWSKey: string;
@@ -124,6 +124,7 @@ export interface UpdateHouseholdBackground {
 }
 
 export interface FinishProfileReq {
+  id: string | undefined;
   preferredName: string;
   gender: string;
   dob: string; // MM/DD/YYYY, where "/" can be / - . etc e.g. 10.31-2000 is still valid
@@ -152,14 +153,14 @@ export interface ProfileReportSummary {
   description: string;
   createdAt: Date;
   account: {
-    id: number;
+    id: string;
     username: string;
   };
   profile: {
-    id: number;
+    id: string;
     preferredName: string;
     account: {
-      id: number;
+      id: string;
       username: string;
       firstName: string;
       lastName: string;

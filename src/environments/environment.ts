@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   backendHost: 'http://localhost:3000',
-  loginHost: 'http://localhost:8000',
+  loginHost: 'https://fostersource.enoble.cloud',
   useRealAnnouncementService: true,
   useRealAccountService: true,
   useRealProfileService: true,

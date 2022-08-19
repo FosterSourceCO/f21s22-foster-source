@@ -31,7 +31,7 @@ export class EditReplyComponent implements OnInit {
 
       this.forumService.getReplyById(parseInt(id)).subscribe(
         (rs) => {
-          if (this.authService.getToken()?.user.id !== rs.account.id) {
+          if (this.authService.getToken()?.Id !== rs.account.id) {
             this.toastService.error('Access denied. You can only edit your own replies.');
           } else {
             this.reply = rs;

@@ -1,4 +1,4 @@
-import { UpdateCaseWorkerComponent } from './update-case-worker/update-case-worker.component';
+//import { UpdateCaseWorkerComponent } from './update-case-worker/update-case-worker.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { UpdateAddressComponent } from './update-address/update-address.component';
 import { DeleteAccountComponent } from './delete-account/delete-account.component';
@@ -28,10 +28,10 @@ const routes: Routes = [
     path: 'update/phone-number',
     component: UpdatePhoneComponent,
   },
-  {
-    path: 'update/case-worker-info',
-    component: UpdateCaseWorkerComponent,
-  },
+  // {
+  //   path: 'update/case-worker-info',
+  //   component: UpdateCaseWorkerComponent,
+  // },
 ];
 
 @NgModule({

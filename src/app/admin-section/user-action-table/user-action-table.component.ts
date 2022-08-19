@@ -57,48 +57,48 @@ export class UserActionTableComponent implements OnInit {
     return formatDate(this.users[index].lastLogin, 'MM/dd/yyyy', 'en-US');
   }
 
-  public denyApplicant(index: number): void {
-    const denied: ApprovalTableUser = this.users[index];
-    if (denied.denyForm.invalid) {
-      denied.denyForm.markAllAsTouched();
-    } else {
-      const params = denied.denyForm.value;
-      const denyRequest: DenyApplicantRequest = {
-        id: denied.id,
-        reason: params['reason' + denied.index],
-        shouldNotifyApplicant: params['sendCopy' + denied.index],
-        shouldBlacklist: params['ban' + denied.index],
-      };
-      this.accountService.denyApplicant(denyRequest).subscribe(
-        (res: any) => {
-          this.toastService.success(`Successfully denied applicant ${denied.firstName} ${denied.lastName}.`);
-          this.getAndRemoveApplicantByIndex(index);
-        },
-        (error: HttpErrorResponse) => {
-          this.toastService.httpError(error);
-        }
-      );
-    }
-  }
+  // public denyApplicant(index: number): void {
+  //   const denied: ApprovalTableUser = this.users[index];
+  //   if (denied.denyForm.invalid) {
+  //     denied.denyForm.markAllAsTouched();
+  //   } else {
+  //     const params = denied.denyForm.value;
+  //     const denyRequest: DenyApplicantRequest = {
+  //       id: denied.id,
+  //       reason: params['reason' + denied.index],
+  //       shouldNotifyApplicant: params['sendCopy' + denied.index],
+  //       shouldBlacklist: params['ban' + denied.index],
+  //     };
+  //     this.accountService.denyApplicant(denyRequest).subscribe(
+  //       (res: any) => {
+  //         this.toastService.success(`Successfully denied applicant ${denied.firstName} ${denied.lastName}.`);
+  //         this.getAndRemoveApplicantByIndex(index);
+  //       },
+  //       (error: HttpErrorResponse) => {
+  //         this.toastService.httpError(error);
+  //       }
+  //     );
+  //   }
+  // }
+  //
+  // public approveApplicant(index: number): void {
+  //   const approved: Account = this.getAndRemoveApplicantByIndex(index);
+  //   const approveParams: ApproveApplicantRequest = {
+  //     id: approved.id,
+  //   };
 
-  public approveApplicant(index: number): void {
-    const approved: Account = this.getAndRemoveApplicantByIndex(index);
-    const approveParams: ApproveApplicantRequest = {
-      id: approved.id,
-    };
-
-    this.accountService.approveApplicant(approveParams).subscribe(
-      (res: any) => {
-        this.toastService.show({
-          body: `Successfully approved applicant ${approved.firstName} ${approved.lastName}.`,
-          preset: ToastPresets.SUCCESS,
-        });
-      },
-      (error: HttpErrorResponse) => {
-        this.toastService.httpError(error);
-      }
-    );
-  }
+  //   this.accountService.approveApplicant(approveParams).subscribe(
+  //     (res: any) => {
+  //       this.toastService.show({
+  //         body: `Successfully approved applicant ${approved.firstName} ${approved.lastName}.`,
+  //         preset: ToastPresets.SUCCESS,
+  //       });
+  //     },
+  //     (error: HttpErrorResponse) => {
+  //       this.toastService.httpError(error);
+  //     }
+  //   );
+  // }
 
   private getAndRemoveApplicantByIndex(index: number): Account {
     const toGet: Account = this.users[index];

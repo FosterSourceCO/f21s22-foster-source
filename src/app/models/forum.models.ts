@@ -39,7 +39,7 @@ export interface ThreadSummary {
   edited: boolean;
   requesterHasLiked: boolean;
   account: {
-    id: number;
+    id: string;
     username: string;
     privilege: string;
     profileId?: number;
@@ -68,7 +68,7 @@ export interface Reply {
   createdAt: Date;
   threadId: number;
   account: {
-    id: number;
+    id: string;
     username: string;
     privilege: string;
     profileId?: number;
@@ -89,7 +89,7 @@ export interface FullThread {
   topicId: number;
   requesterHasLiked: boolean;
   account: {
-    id: number;
+    id: string;
     username: string;
     privilege: string;
     profileId?: number;
@@ -161,7 +161,7 @@ export interface ThreadReport {
   threadTitle: string;
   createdAt: Date;
   account: {
-    id: number;
+    id: string;
     username: string;
   };
 }
@@ -178,7 +178,7 @@ export interface ReplyReport {
   replyBody: string;
   createdAt: Date;
   account: {
-    id: number;
+    id: string;
     username: string;
   };
 }

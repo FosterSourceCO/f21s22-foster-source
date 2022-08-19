@@ -2,6 +2,7 @@ import { DayModel } from '../../common-components/day-availability-input/day-ava
 import { AvailabilityType, SimpleAvailability } from '../../models/availability.model';
 import { AccountService } from '../../services/account-service/account.service';
 import { ToastService } from '../../services/toast-service/toast.service';
+import { AuthService } from '../../services/auth-service/auth.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { PhoneNumber } from '../../models/phonenumber.model';
 import { Component, Input, OnInit } from '@angular/core';
@@ -32,7 +33,6 @@ export class FinishAccountModalComponent implements OnInit {
   public submitting = false;
 
   public profileImgKey = '';
-
   private secondaryAccountHolderFields = [
     'secfname',
     'seclname',
@@ -99,10 +99,12 @@ export class FinishAccountModalComponent implements OnInit {
   private provideRespiteFields = ['respiteCity', 'respiteRange', 'minAge', 'maxAge', 'howManyCareFor'];
 
   @Input() account: Account;
+  public cookie: any;
 
   constructor(
     private formBuilder: FormBuilder,
     private accountService: AccountService,
+    private authService: AuthService,
     private router: Router,
     private toastService: ToastService
   ) {
@@ -110,6 +112,7 @@ export class FinishAccountModalComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.cookie = this.authService.getToken();
     this.finishProfileForm = this.formBuilder.group({
       preferredName: ['', Validators.required],
       gender: ['', Validators.required],
@@ -163,6 +166,7 @@ export class FinishAccountModalComponent implements OnInit {
       alert('Please complete all required fields (indicated with a red star).');
     } else {
       const req: FinishProfileReq = {
+        id: this.cookie.Id,
         preferredName: this.finishProfileForm.get('preferredName')!.value,
         gender: this.finishProfileForm.get('gender')!.value,
         dob: this.finishProfileForm.get('dob')!.value,

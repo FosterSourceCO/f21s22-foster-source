@@ -1,4 +1,4 @@
-import { UpdateCaseWorkerComponent } from './update-case-worker/update-case-worker.component';
+//import { UpdateCaseWorkerComponent } from './update-case-worker/update-case-worker.component';
 import { CommonComponentsModule } from '../common-components/common-components.module';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { DeleteAccountComponent } from './delete-account/delete-account.component';
@@ -17,7 +17,6 @@ import { NgModule } from '@angular/core';
     DeleteAccountComponent,
     UpdateAddressComponent,
     UpdatePhoneComponent,
-    UpdateCaseWorkerComponent,
   ],
   imports: [CommonModule, AccountRoutingModule, ReactiveFormsModule, CommonComponentsModule],
 })

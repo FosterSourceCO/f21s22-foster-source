@@ -1,4 +1,4 @@
-<div *ngIf="currentAccount" class="container mt-5">
+<div *ngIf="cookie" class="container mt-5">
   <div class="row">
     <div class="col">
       <h2>Your Account</h2>
@@ -7,9 +7,9 @@
   <div class="row mt-5">
     <div class="col-sm-12 col-md-6">
       <h3>Personal Information</h3>
-      <p><b>Name:</b> {{ currentAccount.firstName }} {{ currentAccount.lastName }}</p>
-      <p><b>Username:</b> {{ currentAccount.username }}</p>
-      <p><b>Email:</b> {{ currentAccount.email }}</p>
+      <p><b>Name:</b> {{ cookie.FirstName }} {{ cookie.LastName }}</p>
+      <p><b>Username:</b> {{ cookie.nc_Portal_Username__c }}</p>
+      <p><b>Email:</b> {{ cookie.Email }}</p>
       <p *ngIf="isUser">
         <b>Profile Completed:</b> {{ currentAccount.profileCompleted ? "Yes" : "No" }}
         <span *ngIf="!currentAccount.profileCompleted"
@@ -23,14 +23,13 @@
           ></span
         >
       </p>
-      <p *ngIf="!isUser" id="account-level-p"><b>Account Level:</b> {{ currentAccount.privilege }}</p>
+      <p *ngIf="!isUser" id="account-level-p"><b>Account Level:</b> {{ cookie.privilegeLevel }}</p>
     </div>
     <div *ngIf="isUser" id="cw-info-div" class="col-sm-12 col-md-6 mt-5 mt-md-0">
       <h3>Case Worker Information</h3>
-      <p><b>Case Worker Name:</b> {{ currentAccount.cwFirstName }} {{ currentAccount.cwLastName }}</p>
-      <p><b>Case Worker Email:</b> {{ currentAccount.cwEmail }}</p>
-      <p><b>Case Worker Phone Number:</b> {{ currentAccount.cwPhoneNumber }}</p>
-      <p><b>County or Agency Certified By:</b> {{ currentAccount.certifiedBy }}</p>
+      <p><b>Case Worker Name:</b> {{ cookie.nc_Caseworker_Name_c }}</p>
+      <p><b>Case Worker Contact Info:</b> {{ cookie.nc_Caseworker_Contact_Info_c }}</p>
+      <p><b>County or Agency Certified By:</b> {{ cookie.nc_Caseworker_Cerifying_County_Agency_c }}</p>
       <p>
         <b>Expiration Date of Certification:</b> {{ getFormattedCertExpiryDate() }}
         <span class="expires-soon bg-danger text-white rounded pb-1 px-2 ml-2" *ngIf="certExpiresSoon"
@@ -51,31 +50,14 @@
     <div class="col-sm-12 col-md-6">
       <h3>Address</h3>
       <p>
-        {{ currentAccount.address.addressLine1 }}
-        <span *ngIf="currentAccount.address.addressLine2">, {{ currentAccount.address.addressLine2 }}</span
-        ><br />{{ currentAccount.address.city }} {{ currentAccount.address.state }},
-        {{ currentAccount.address.zipcode }}
+        {{ cookie.nc_Address__Street__s }}
+        <br />{{ cookie.nc_Address__City__s }} {{ cookie.nc_State__c }},
+        {{ cookie.nc_Address__PostalCode__s }}
       </p>
-      <p><a id="update-address-link" [routerLink]="'/account/update/address'">Update your address</a></p>
     </div>
     <div class="col-sm-12 col-md-6 mt-5 mt-md-0">
-      <h3>Phone Number<span *ngIf="currentAccount.secondaryPhoneNumber">s</span></h3>
-      <p>
-        <b>Primary Phone Number:</b> {{ currentAccount.primaryPhoneNumber.phoneNumber }} ({{
-          currentAccount.primaryPhoneNumber.type
-        }})
-      </p>
-      <p *ngIf="currentAccount.secondaryPhoneNumber">
-        <b>Secondary Phone Number:</b> {{ currentAccount.secondaryPhoneNumber.phoneNumber }} ({{
-          currentAccount.secondaryPhoneNumber.type
-        }})
-      </p>
-      <p>
-        <a id="update-phone-link" [routerLink]="'/account/update/phone-number'"
-          >Update your phone number<span *ngIf="currentAccount.secondaryPhoneNumber">s</span
-          ><span *ngIf="!currentAccount.secondaryPhoneNumber"> or add a secondary phone number.</span></a
-        >
-      </p>
+      <h3>Phone Number</h3>
+      <p><b>Primary Phone Number:</b> {{ cookie.MobilePhone }}</p>
     </div>
   </div>
   <div class="row mt-5">

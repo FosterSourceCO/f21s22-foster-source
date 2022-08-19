@@ -9,7 +9,7 @@ import { VerifyEmailActionComponent } from './verify-email-action/verify-email-a
 import { CommonComponentsModule } from '../common-components/common-components.module';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
-import { ModRegisterComponent } from './mod-register/mod-register.component';
+//import { ModRegisterComponent } from './mod-register/mod-register.component';
 import { LoginModalComponent } from './login-modal/login-modal.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
@@ -40,10 +40,10 @@ const routes: Routes = [
     path: 'verify',
     component: VerifyEmailActionComponent,
   },
-  {
-    path: 'create-account/staff',
-    component: ModRegisterComponent,
-  },
+  // {
+  //   path: 'create-account/staff',
+  //   component: ModRegisterComponent,
+  // },
   {
     path: 'recovery/update-password',
     component: PasswordRecoveryChangeComponent,
@@ -68,7 +68,6 @@ export const loginRouting = RouterModule.forChild(routes);
     FinishAccountModalComponent,
     ProfileImageUploadComponent,
     VerifyEmailActionComponent,
-    ModRegisterComponent,
     LoginModalComponent,
     PasswordRecoveryChangeComponent,
     ForgotPasswordComponent,

@@ -17,6 +17,7 @@ export class AccountPageComponent implements OnInit {
   public isUser = true;
   public certExpiresSoon = false;
   public certExpired = false;
+  public cookie: any;
 
   constructor(
     private accountService: AccountService,
@@ -26,10 +27,11 @@ export class AccountPageComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.cookie = this.authService.getToken();
     this.accountService.getCurrentAccount().subscribe(
       (acc: Account) => {
         this.currentAccount = acc;
-        this.isUser = this.authService.getToken()?.application.userPermissions[0] === 1;
+        this.isUser = this.authService.getToken()?.privilegeLevel === 1;
 
         if (this.isUser) {
           this.certExpired = this.isCertExpired(this.currentAccount.certExpiry);
