@@ -86,167 +86,95 @@ export const addresses: AddressRes[] = [
 
 export const createAccountRequests: CreateAccountRequest[] = [
   {
-    email: 'jcrowson@aol.com',
-    username: 'jman',
-    password: 'hashedpassword',
-    firstName: 'Jett',
-    lastName: 'Crowman',
-    cwFirstName: 'George',
-    cwLastName: 'Clooney',
-    cwEmail: 'gCloon@aol.com',
-    cwPhoneNumber: '+17208388843',
-    certifiedBy: 'Araphaoe',
+    id: 'sgnjksfdkk',
     certExpiry: '10/31/2022',
-    primaryPhoneNumber: {
-      phoneNumber: '+17209938821',
-      type: PhoneNumberType.Mobile,
-    },
-    secondaryPhoneNumber: {
-      phoneNumber: '+13321123345',
-      type: PhoneNumberType.Home,
-    },
-    address: simpleAddresses[0],
   },
 ];
 
-export const cookies: Token[] = [
-  {
-    id: 1,
-    privilegeLevel: 3,
-    exp: 12341235,
-    iat: 123412341,
-  },
-];
+// export const cookies: Token[] = [
+//   {
+//     id: 'ABZ13lnm54ak0sd',
+//     privilegeLevel: 1,
+//     exp: 12341235,
+//     iat: 123412341,
+//   },
+// ];
 
 export const tokenString = `eyJhbGciOiJIUzI1NiJ9.eyJpZCI6NywicHJpdmlsZWdlTGV2ZWwiOiIzIiwiaWF0IjoxNjM2OTMyNDQzLCJleHAiOjE2Mzc5OTg4OTN9.Qgl84ZWtv9P6u14DTxoZ8lwspcyV3tR4RrMmqX63XTQ`;
 
 export const accounts: Account[] = [
   {
-    id: 1,
-    email: 'jcrowson@colorado.edu',
-    username: 'jword',
-    password: 'pass1234',
-    firstName: 'Jett',
-    lastName: 'Crowman',
-    cwFirstName: 'Gina',
-    cwLastName: 'Smith',
-    cwEmail: 'noreply@google.com',
-    cwPhoneNumber: '+17208839921',
-    certifiedBy: 'Arapahoe County',
+    id: 'ABZ13lnm54ak0sd',
     certExpiry: new Date('10/31/2032'),
-    privilege: 'USER',
-    primaryPhoneNumber: {
-      phoneNumber: '+17209938821',
-      type: PhoneNumberType.Mobile,
-    },
-    secondaryPhoneNumber: {
-      phoneNumber: '+13321123345',
-      type: PhoneNumberType.Home,
-    },
     lastLogin: new Date(),
     profileCompleted: true,
-    address: {
-      addressLine1: '1002 fake st.',
-      city: 'Denver',
-      zipcode: '80210',
-      state: 'CO',
-      lat: '1',
-      lon: '1',
-    },
   },
   {
-    id: 2,
-    email: 'jcrowson@colorado.edu',
-    username: 'jword',
-    password: 'pass1234',
-    firstName: 'Jet',
-    lastName: 'Crowman',
-    cwFirstName: 'Gina',
-    cwLastName: 'Smith',
-    cwEmail: 'noreply@google.com',
-    cwPhoneNumber: '+17208839921',
-    certifiedBy: 'Arapahoe County',
+    id: 'sgnjdknfkjsnfs',
     certExpiry: new Date('10/31/2032'),
-    privilege: 'USER',
-    primaryPhoneNumber: {
-      phoneNumber: '+17209938821',
-      type: PhoneNumberType.Mobile,
-    },
-    secondaryPhoneNumber: {
-      phoneNumber: '+13321123345',
-      type: PhoneNumberType.Home,
-    },
     lastLogin: new Date(),
     profileCompleted: true,
-    address: {
-      addressLine1: '1002 fake st.',
-      city: 'Denver',
-      zipcode: '80210',
-      state: 'CO',
-      lat: '1',
-      lon: '1',
-    },
   },
 ];
 
 const users: User[] = [
   {
-    id: 1,
+    id: 'asdfghjkl',
     firstName: 'John',
     lastName: 'Doe',
   },
 ];
 
-const applicants: Applicant[] = [
-  {
-    id: 1,
-    name: 'Tim Cook',
-    email: 'tim.cook@apple.com',
-    caseWorkerName: 'Gina White',
-    caseWorkerEmail: 'gwhite@colorado.gov',
-    dateApplied: new Date(),
-  },
-  {
-    id: 2,
-    name: 'John Denver',
-    email: 'jdenver2@gmail.com',
-    caseWorkerName: 'Sam Smith',
-    caseWorkerEmail: 'sam.smith@colorado.gov',
-    dateApplied: new Date(),
-  },
-  {
-    id: 3,
-    name: 'Michelle Obama',
-    email: 'mobama@whitehouse.gov',
-    caseWorkerName: 'Gina White',
-    caseWorkerEmail: 'gwhite@colorado.gov',
-    dateApplied: new Date(),
-  },
-  {
-    id: 4,
-    name: 'Tim Cook',
-    email: 'tim.cook@apple.com',
-    caseWorkerName: 'Gina White',
-    caseWorkerEmail: 'gwhite@colorado.gov',
-    dateApplied: new Date(),
-  },
-  {
-    id: 5,
-    name: 'John Denver',
-    email: 'jdenver2@gmail.com',
-    caseWorkerName: 'Sam Smith',
-    caseWorkerEmail: 'sam.smith@colorado.gov',
-    dateApplied: new Date(),
-  },
-  {
-    id: 6,
-    name: 'Michelle Obama',
-    email: 'mobama@whitehouse.gov',
-    caseWorkerName: 'Gina White',
-    caseWorkerEmail: 'gwhite@colorado.gov',
-    dateApplied: new Date(),
-  },
-];
+// const applicants: Applicant[] = [
+//   {
+//     id: 1,
+//     name: 'Tim Cook',
+//     email: 'tim.cook@apple.com',
+//     caseWorkerName: 'Gina White',
+//     caseWorkerEmail: 'gwhite@colorado.gov',
+//     dateApplied: new Date(),
+//   },
+//   {
+//     id: 2,
+//     name: 'John Denver',
+//     email: 'jdenver2@gmail.com',
+//     caseWorkerName: 'Sam Smith',
+//     caseWorkerEmail: 'sam.smith@colorado.gov',
+//     dateApplied: new Date(),
+//   },
+//   {
+//     id: 3,
+//     name: 'Michelle Obama',
+//     email: 'mobama@whitehouse.gov',
+//     caseWorkerName: 'Gina White',
+//     caseWorkerEmail: 'gwhite@colorado.gov',
+//     dateApplied: new Date(),
+//   },
+//   {
+//     id: 4,
+//     name: 'Tim Cook',
+//     email: 'tim.cook@apple.com',
+//     caseWorkerName: 'Gina White',
+//     caseWorkerEmail: 'gwhite@colorado.gov',
+//     dateApplied: new Date(),
+//   },
+//   {
+//     id: 5,
+//     name: 'John Denver',
+//     email: 'jdenver2@gmail.com',
+//     caseWorkerName: 'Sam Smith',
+//     caseWorkerEmail: 'sam.smith@colorado.gov',
+//     dateApplied: new Date(),
+//   },
+//   {
+//     id: 6,
+//     name: 'Michelle Obama',
+//     email: 'mobama@whitehouse.gov',
+//     caseWorkerName: 'Gina White',
+//     caseWorkerEmail: 'gwhite@colorado.gov',
+//     dateApplied: new Date(),
+//   },
+// ];
 
 export const photos: Photo[] = [
   {
@@ -417,53 +345,28 @@ export const profiles: FullProfileRes[] = [
       },
     },
     photos: [],
-    secAccountHolder: {
-      id: 1,
-      relationshipToPrimary: 'met once in an airport',
-      firstName: 'Tommy',
-      lastName: 'Bahama',
-      gender: 'male',
-      email: 'tbahama@tommyb.com',
-      preferredName: 'Tom',
-      maritalStatus: 'Married',
-      secAccountHolderPhone: {
-        id: 1,
-        phoneNumber: '+17207738882',
-        type: PhoneNumberType.Home,
-      },
-    },
+    // secAccountHolder: {
+    //   id: 1,
+    //   relationshipToPrimary: 'met once in an airport',
+    //   firstName: 'Tommy',
+    //   lastName: 'Bahama',
+    //   gender: 'male',
+    //   email: 'tbahama@tommyb.com',
+    //   preferredName: 'Tom',
+    //   maritalStatus: 'Married',
+    //   secAccountHolderPhone: {
+    //     id: 1,
+    //     phoneNumber: '+17207738882',
+    //     type: PhoneNumberType.Home,
+    //   },
+    // },
     account: {
-      firstName: 'Jett',
-      lastName: 'Crowson',
-      email: 'jettcrowson@colorado.gov',
-      username: 'jcrowson',
       lastLogin: new Date(),
-      address: {
-        id: 1,
-        addressLine1: '741 Danbury St',
-        addressLine2: 'APT 101',
-        city: 'Boulder',
-        zipcode: '903213',
-        state: 'CO',
-        country: 'USA',
-        longitude: 12030210,
-        latitude: 23412,
-      },
-      primaryPhoneNumber: {
-        id: 1,
-        phoneNumber: '+17208837746',
-        type: PhoneNumberType.Mobile,
-      },
-      secondaryPhoneNumber: {
-        id: 1,
-        phoneNumber: '+13033465534',
-        type: PhoneNumberType.Mobile,
-      },
     },
   },
 ];
 
-export { announcements, getAnnouncementResponses, users, applicants, blacklist };
+export { announcements, getAnnouncementResponses, users, blacklist };
 
 export const searchResults: SmallProfile[] = [
   {
@@ -563,7 +466,7 @@ export const threadSummaries: ThreadSummary[] = [
     topicTitle: 'Parenting 101 Topic',
     requesterHasLiked: true,
     account: {
-      id: 51,
+      id: 'ABZ13lnm54ak0sd',
       username: 'respiteuser1',
       privilege: 'USER',
       profileId: 2,
@@ -582,7 +485,7 @@ export const threadSummaries: ThreadSummary[] = [
     requesterHasLiked: false,
 
     account: {
-      id: 51,
+      id: 'ABZ13lnm54ak0sd',
       username: 'iAmLegend3',
       privilege: 'USER',
       profileId: 3,
@@ -601,7 +504,7 @@ export const threadSummaries: ThreadSummary[] = [
     requesterHasLiked: true,
 
     account: {
-      id: 51,
+      id: 'ABZ13lnm54ak0sd',
       username: 'adminuser',
       privilege: 'MOD',
     },
@@ -620,7 +523,7 @@ export const replies: Reply[] = [
     createdAt: new Date(),
     threadId: 2,
     account: {
-      id: 1,
+      id: 'ABZ13lnm54ak0sd',
       username: 'replyguy.1',
       privilege: 'USER',
       profileId: 2,
@@ -636,7 +539,7 @@ export const replies: Reply[] = [
     createdAt: new Date(),
     threadId: 2,
     account: {
-      id: 2,
+      id: 'sajkfdsnbkjgnkj',
       username: 'admin-man',
       privilege: 'ADMIN',
       profileSmallAwsKey: 'test',
@@ -651,7 +554,7 @@ export const replies: Reply[] = [
     createdAt: new Date(),
     threadId: 2,
     account: {
-      id: 3,
+      id: 'ask45kasd',
       username: 'randomdude',
       privilege: 'USER',
       profileId: 3,

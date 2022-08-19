@@ -27,7 +27,7 @@ describe('AnnouncementComponent', () => {
     const mockCookie: Token = {
       exp: 99999999,
       iat: 0,
-      id: 0,
+      user: { id: 0 },
       privilegeLevel: 2,
     };
     spyOn(authService, 'getToken').and.returnValue(mockCookie);

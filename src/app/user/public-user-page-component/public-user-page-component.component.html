@@ -11,7 +11,7 @@
               <p>
                 <b>{{ selectedProfile.preferredName }}</b>
                 <br />
-                <span>{{ selectedProfile.account.username }}</span>
+                <!--                <span>{{ selectedProfile.account.username }}</span>-->
                 <br />
                 <i
                   >{{ selectedProfile.gender
@@ -76,13 +76,13 @@
                   </tbody>
                 </table>
               </div>
-              <a
-                *ngIf="isAvailable"
-                href="javascript: void(0)"
-                class="card-link"
-                (click)="openPrimaryContactModal(secondaryContent)"
-                >Contact Secondary Account Holder</a
-              >
+              <!--              <a-->
+              <!--                *ngIf="isAvailable"-->
+              <!--                href="javascript: void(0)"-->
+              <!--                class="card-link"-->
+              <!--                (click)="openPrimaryContactModal(secondaryContent)"-->
+              <!--                >Contact Secondary Account Holder</a-->
+              <!--              >-->
             </div>
           </div>
         </div>
@@ -294,104 +294,104 @@
   <div class="row mt-5 mb-5" *ngIf="isAvailable">
     <div class="col-md-3"></div>
     <div class="col-sm-12 col-md-6">
-      <button
-        type="button"
-        class="btn btn-primary btn-lg btn-block text-white contact-grid"
-        (click)="openPrimaryContactModal(content)"
-      >
-        Contact
-      </button>
+      <!--      <button-->
+      <!--        type="button"-->
+      <!--        class="btn btn-primary btn-lg btn-block text-white contact-grid"-->
+      <!--        (click)="openPrimaryContactModal(content)"-->
+      <!--      >-->
+      <!--        Contact-->
+      <!--      </button>-->
     </div>
   </div>
 </div>
 <div class="container" *ngIf="!selectedProfile">Loading profile...</div>
 
 <!-- Modal -->
-<ng-template #content let-modal>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title">Contact Information</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <form>
-      <div class="form-group">
-        <div class="input-group">
-          <div class="input-group-append contact-modal">
-            <h3>Contact Information</h3>
-            <!-- {{ selectedProfile.preferredName }} add this maybe?-->
-            <p>
-              <i
-                >Ensure that you have read and fully understand the <a href="/help">site rules</a> before contacting
-                users.</i
-              >
-            </p>
-            <span
-              ><span>Email: </span
-              ><a href="mailto:{{ selectedProfile.account.email }}"> {{ selectedProfile.account.email }}</a></span
-            >
-            <br />
-            <div class="spacer"></div>
-            <span
-              ><span>{{ selectedProfile.account.primaryPhoneNumber.type }}: </span>
-              <a href="tel:{{ selectedProfile.account.primaryPhoneNumber.phoneNumber }}">
-                {{ formatPhoneNumber(selectedProfile.account.primaryPhoneNumber.phoneNumber) }}</a
-              ></span
-            >
-            <br />
-            <div class="spacer"></div>
-            <span *ngIf="selectedProfile.account.secondaryPhoneNumber"
-              ><span>{{ selectedProfile.account.secondaryPhoneNumber?.type }}: </span
-              ><a href="tel:{{ selectedProfile.account.secondaryPhoneNumber?.phoneNumber }}">
-                {{ formatPhoneNumber(selectedProfile.account.secondaryPhoneNumber.phoneNumber) }}</a
-              ></span
-            >
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>
-  </div>
-</ng-template>
+<!--<ng-template #content let-modal>-->
+<!--  <div class="modal-header">-->
+<!--    <h4 class="modal-title" id="modal-basic-title">Contact Information</h4>-->
+<!--    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">-->
+<!--      <span aria-hidden="true">&times;</span>-->
+<!--    </button>-->
+<!--  </div>-->
+<!--  <div class="modal-body">-->
+<!--    <form>-->
+<!--      <div class="form-group">-->
+<!--        <div class="input-group">-->
+<!--          <div class="input-group-append contact-modal">-->
+<!--            <h3>Contact Information</h3>-->
+<!--            &lt;!&ndash; {{ selectedProfile.preferredName }} add this maybe?&ndash;&gt;-->
+<!--            <p>-->
+<!--              <i-->
+<!--                >Ensure that you have read and fully understand the <a href="/help">site rules</a> before contacting-->
+<!--                users.</i-->
+<!--              >-->
+<!--            </p>-->
+<!--&lt;!&ndash;            <span&ndash;&gt;-->
+<!--&lt;!&ndash;              ><span>Email: </span&ndash;&gt;-->
+<!--&lt;!&ndash;              ><a href="mailto:{{ selectedProfile.account.email }}"> {{ selectedProfile.account.email }}</a></span&ndash;&gt;-->
+<!--&lt;!&ndash;            >&ndash;&gt;-->
+<!--            <br />-->
+<!--            <div class="spacer"></div>-->
+<!--            <span-->
+<!--              ><span>{{ selectedProfile.account.primaryPhoneNumber.type }}: </span>-->
+<!--              <a href="tel:{{ selectedProfile.account.primaryPhoneNumber.phoneNumber }}">-->
+<!--                {{ formatPhoneNumber(selectedProfile.account.primaryPhoneNumber.phoneNumber) }}</a-->
+<!--              ></span-->
+<!--            >-->
+<!--            <br />-->
+<!--            <div class="spacer"></div>-->
+<!--            <span *ngIf="selectedProfile.account.secondaryPhoneNumber"-->
+<!--              ><span>{{ selectedProfile.account.secondaryPhoneNumber?.type }}: </span-->
+<!--              ><a href="tel:{{ selectedProfile.account.secondaryPhoneNumber?.phoneNumber }}">-->
+<!--                {{ formatPhoneNumber(selectedProfile.account.secondaryPhoneNumber.phoneNumber) }}</a-->
+<!--              ></span-->
+<!--            >-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </form>-->
+<!--  </div>-->
+<!--  <div class="modal-footer">-->
+<!--    <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Close</button>-->
+<!--  </div>-->
+<!--</ng-template>-->
 
-<ng-template #secondaryContent let-modal2>
-  <div class="modal-header">
-    <h4 class="modal-title" id="modal-basic-title-secondary">Secondary Account Holder Contact Information</h4>
-    <button type="button" class="close" aria-label="Close" (click)="modal2.dismiss('Cross click')">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
-  <div class="modal-body">
-    <form>
-      <div class="form-group">
-        <div class="input-group">
-          <div class="input-group-append contact-modal" *ngIf="selectedProfile.secAccountHolder">
-            <span
-              ><span>Email: </span
-              ><a href="mailto:{{ selectedProfile.secAccountHolder?.email }}">
-                {{ selectedProfile.secAccountHolder?.email }}</a
-              ></span
-            >
-            <br />
-            <div class="spacer"></div>
-            <span
-              ><span>{{ selectedProfile.secAccountHolder!.secAccountHolderPhone!.type }}: </span>
-              <a href="tel:{{ (selectedProfile.secAccountHolder?.secAccountHolderPhone)!.phoneNumber }}">
-                {{ formatPhoneNumber((selectedProfile.secAccountHolder?.secAccountHolderPhone)!.phoneNumber) }}</a
-              ></span
-            >
-          </div>
-        </div>
-      </div>
-    </form>
-  </div>
-  <div class="modal-footer">
-    <button type="button" class="btn btn-outline-dark" (click)="modal2.close('Save click')">Close</button>
-  </div>
-</ng-template>
+<!--<ng-template #secondaryContent let-modal2>-->
+<!--  <div class="modal-header">-->
+<!--    <h4 class="modal-title" id="modal-basic-title-secondary">Secondary Account Holder Contact Information</h4>-->
+<!--    <button type="button" class="close" aria-label="Close" (click)="modal2.dismiss('Cross click')">-->
+<!--      <span aria-hidden="true">&times;</span>-->
+<!--    </button>-->
+<!--  </div>-->
+<!--  <div class="modal-body">-->
+<!--    <form>-->
+<!--      <div class="form-group">-->
+<!--        <div class="input-group">-->
+<!--          <div class="input-group-append contact-modal" *ngIf="selectedProfile.secAccountHolder">-->
+<!--            <span-->
+<!--              ><span>Email: </span-->
+<!--              ><a href="mailto:{{ selectedProfile.secAccountHolder?.email }}">-->
+<!--                {{ selectedProfile.secAccountHolder?.email }}</a-->
+<!--              ></span-->
+<!--            >-->
+<!--            <br />-->
+<!--            <div class="spacer"></div>-->
+<!--            <span-->
+<!--              ><span>{{ selectedProfile.secAccountHolder!.secAccountHolderPhone!.type }}: </span>-->
+<!--              <a href="tel:{{ (selectedProfile.secAccountHolder?.secAccountHolderPhone)!.phoneNumber }}">-->
+<!--                {{ formatPhoneNumber((selectedProfile.secAccountHolder?.secAccountHolderPhone)!.phoneNumber) }}</a-->
+<!--              ></span-->
+<!--            >-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </form>-->
+<!--  </div>-->
+<!--  <div class="modal-footer">-->
+<!--    <button type="button" class="btn btn-outline-dark" (click)="modal2.close('Save click')">Close</button>-->
+<!--  </div>-->
+<!--</ng-template>-->
 
 <!-- Report Modal -->
 <ng-template #reportModal let-reportModal>

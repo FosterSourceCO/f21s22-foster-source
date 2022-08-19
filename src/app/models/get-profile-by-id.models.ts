@@ -82,13 +82,6 @@ export interface UpdateSecAccountHolderReq {
 }
 
 export interface PublicAccountFields {
-  firstName: string;
-  lastName: string;
-  email: string;
-  username: string;
-  address: AddressRes;
-  primaryPhoneNumber: PhoneNumber;
-  secondaryPhoneNumber?: PhoneNumber;
   lastLogin: Date;
 }
 

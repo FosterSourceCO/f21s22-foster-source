@@ -2,41 +2,15 @@ import { PhoneNumber } from './phonenumber.model';
 import { AddressReq, SimpleAddressReq } from './adress.model';
 
 export interface Account {
-  id: number;
-  email: string;
-  username: string;
-  password: string;
-  firstName: string;
-  lastName: string;
-  cwFirstName: string;
-  cwLastName: string;
-  cwEmail: string;
-  cwPhoneNumber: string;
-  certifiedBy: string;
-  certExpiry: Date;
-  privilege: string;
-  primaryPhoneNumber: PhoneNumber;
-  secondaryPhoneNumber?: PhoneNumber;
+  id: string;
   lastLogin: Date;
   profileCompleted: boolean;
-  address: AddressReq;
+  certExpiry: Date;
 }
 
 export interface CreateAccountRequest {
-  email: string;
-  username: string;
-  password: string;
-  firstName: string;
-  lastName: string;
-  cwFirstName: string;
-  cwLastName: string;
-  cwEmail: string;
-  cwPhoneNumber: string;
-  certifiedBy: string;
+  id: string;
   certExpiry: string;
-  primaryPhoneNumber: PhoneNumber;
-  secondaryPhoneNumber?: PhoneNumber;
-  address: SimpleAddressReq;
 }
 
 export interface CreateStaffAccountRequest {
@@ -70,7 +44,21 @@ export interface LoginRequest {
 }
 
 export interface Token {
-  id: number;
+  Email: string;
+  FirstName: string;
+  LastName: string;
+  nc_Portal_Username__c: string;
+  Id: string;
+  MobilePhone: string;
+  nc_Address__City_s: string;
+  nc_Address__PostalCode__s: string;
+  nc_Address__Street__s: string;
+  nc_State__c: string;
+  nc_Caseworker_Name_c: string;
+  nc_Caseworker_Status_cs: string;
+  nc_Caseworker_Contact_Info_c: string;
+  nc_Caseworker_Cerifying_County_Agency_c: string;
+  nc_County_of_Residence_c: string;
   privilegeLevel: number;
   exp: number;
   iat: number;

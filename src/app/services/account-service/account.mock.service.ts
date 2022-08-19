@@ -9,7 +9,6 @@ import {
   Account,
   CaseWorkerInfo,
   CreateAccountRequest,
-  CreateStaffAccountRequest,
   DeleteAccountReq,
   GetAccountsReq,
   LoginRequest,
@@ -21,9 +20,9 @@ export class AccountMockService implements AccountService {
     return of(createAccountRequests[0]);
   }
 
-  createStaffAccount(accountReq: CreateStaffAccountRequest): Observable<any> {
-    return of({});
-  }
+  // createStaffAccount(accountReq: CreateStaffAccountRequest): Observable<any> {
+  //   return of({});
+  // }
 
   deleteOwnAccount(req: DeleteAccountReq): Observable<any> {
     return of({});
@@ -73,7 +72,7 @@ export class AccountMockService implements AccountService {
     return of({});
   }
 
-  getAccountById(id: number): Observable<Account> {
+  getAccountById(id: string): Observable<Account> {
     return of(accounts[0]);
   }
 
@@ -81,9 +80,9 @@ export class AccountMockService implements AccountService {
     return of({});
   }
 
-  getCwInfo(): Observable<CaseWorkerInfo> {
-    return of(accounts[0]);
-  }
+  // getCwInfo(): Observable<CaseWorkerInfo> {
+  //   return of(accounts[0]);
+  // }
 
   updateCwInfo(req: CaseWorkerInfo): Observable<any> {
     return of({});

@@ -1,4 +1,3 @@
-import { StaffAccountRequestsComponent } from './staff-account-requests/staff-account-requests.component';
 import { UserActionTableComponent } from './user-action-table/user-action-table.component';
 import { BlacklistTableComponent } from './blacklist-table/blacklist-table.component';
 import { AnnouncementsComponent } from './announcements/announcements.component';
@@ -21,7 +20,6 @@ import { ProfileReportsComponent } from './profile-reports/profile-reports.compo
     UserActionTableComponent,
     BlacklistTableComponent,
     AnnouncementsComponent,
-    StaffAccountRequestsComponent,
     BugReportsComponent,
     ThreadReportsComponent,
     ReplyReportsComponent,

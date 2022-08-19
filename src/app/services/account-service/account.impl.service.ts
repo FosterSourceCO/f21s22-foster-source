@@ -8,7 +8,6 @@ import {
   DeleteAccountReq,
   GetAccountsReq,
   LoginRequest,
-  UpdateAccountReq,
   VerifyReq,
 } from '../../models/account.model';
 import { Observable, of, throwError } from 'rxjs';
@@ -83,11 +82,11 @@ export class AccountImplService implements AccountService {
     });
   }
 
-  getStaffApplicants(): Observable<GetAccountsReq> {
-    return this.http.get<GetAccountsReq>(`${environment.backendHost}/api/db/accounts?approved=false&level=STAFF`, {
-      withCredentials: true,
-    });
-  }
+  // getStaffApplicants(): Observable<GetAccountsReq> {
+  //   return this.http.get<GetAccountsReq>(`${environment.backendHost}/api/db/accounts?approved=false&level=STAFF`, {
+  //     withCredentials: true,
+  //   });
+  // }
 
   approveApplicant(params: ApproveApplicantRequest): Observable<any> {
     return this.http.put<any>(`${environment.backendHost}/api/db/accounts/approval?approve=true`, params, {
@@ -101,20 +100,19 @@ export class AccountImplService implements AccountService {
     });
   }
 
-  getAccountById(id: number): Observable<Account> {
-    return this.http.get<Account>(`${environment.backendHost}/api/db/accounts/${id}`, {
+  getAccountById(Id: string): Observable<Account> {
+    return this.http.get<Account>(`${environment.backendHost}/api/db/accounts/${Id}`, {
       withCredentials: true,
     });
   }
 
   getCurrentAccount(): Observable<Account> {
     const cookie = this.authService.getToken();
-
+    console.log(cookie);
     if (!cookie) {
       return throwError('There is no user currently logged in.');
     }
-
-    return this.getAccountById(cookie.id);
+    return this.getAccountById(cookie.Id);
   }
 
   completeProfile(params: FinishProfileReq): Observable<any> {
@@ -129,11 +127,11 @@ export class AccountImplService implements AccountService {
     });
   }
 
-  getCwInfo(): Observable<CaseWorkerInfo> {
-    return this.http.get<CaseWorkerInfo>(`${environment.backendHost}/api/db/accounts/case-worker-info`, {
-      withCredentials: true,
-    });
-  }
+  // getCwInfo(): Observable<CaseWorkerInfo> {
+  //   return this.http.get<CaseWorkerInfo>(`${environment.backendHost}/api/db/accounts/case-worker-info`, {
+  //     withCredentials: true,
+  //   });
+  // }
 
   updateCwInfo(req: CaseWorkerInfo): Observable<any> {
     return this.http.put(`${environment.backendHost}/api/db/accounts/case-worker-info`, req, {
